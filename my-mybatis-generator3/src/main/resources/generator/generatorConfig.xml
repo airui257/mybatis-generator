@@ -7,8 +7,9 @@
 
     <!--导入外部属性配置文件 非必须的-->
     <properties resource="generator/generator.properties"/>
-    
-	<classPathEntry location="E:\repositories\mvnReposotories\mysql\mysql-connector-java\5.1.46\mysql-connector-java-5.1.46.jar"/>
+
+    <!--指定数据库驱动的jdbc驱动jar包的位置 非必须的-->
+	<!--<classPathEntry location="d:\repositories\mvnReposotories\mysql\mysql-connector-java\5.1.46\mysql-connector-java-5.1.46.jar"/>-->
 
     <!--指定特定数据库的jdbc驱动jar包的位置 非必须的-->
     <!--<classPathEntry location="${jdbc.driverLocation}"/>-->
@@ -45,14 +46,11 @@
     	<property name="javaFileEncoding" value="utf-8"/>
     	
     	<!-- mapper -->
-        <!-- <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
-            <property name="mappers" value="com.power.frl.dao.util.PowerMapper"/>
-        </plugin> -->
+         <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
+            <property name="mappers" value="com.fen.dao.util.PowerMapper"/>
+        </plugin>
         <!-- 缓存插件 -->
         <!-- <plugin type=""></plugin> -->
-        
-        
-        
 
         <!-- optional，旨在创建class时，对注释进行控制 -->
         <commentGenerator>
@@ -82,7 +80,7 @@
         <!-- targetProject:生成PO类的位置 -->
         <javaModelGenerator
                 targetPackage="cn.feng.dao.model"
-                targetProject="my-mybatis-generator3/src/main/java">
+                targetProject="src/main/java">
             <!-- 是否允许子包，即targetPackage.schemaName.tableName -->
             <property name="enableSubPackages" value="false"/>
             <!-- 是否对model添加 构造函数 -->
@@ -96,7 +94,7 @@
 
         <!--Mapper映射文件生成所在的目录 为每一个数据库的表生成对应的SqlMap文件 -->
         <sqlMapGenerator targetPackage="mapper"
-                         targetProject="my-mybatis-generator3/src/main/resources">
+                         targetProject="src/main/resources">
             <property name="enableSubPackages" value="false"/>
         </sqlMapGenerator>
 
@@ -106,11 +104,11 @@
                 type="XMLMAPPER",生成SQLMap XML文件和独立的Mapper接口
         -->
         <javaClientGenerator targetPackage="cn.feng.dao.mapper"
-                             targetProject="my-mybatis-generator3/src/main/java" type="XMLMAPPER">
+                             targetProject="src/main/java" type="XMLMAPPER">
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
 
-        <table tableName="%">
+        <table tableName="t_user">
             <!--mysql 配置-->
             <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
             <!--oracle 配置-->

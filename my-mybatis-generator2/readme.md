@@ -1,3 +1,4 @@
+## 使用maven插件逆向生成
 第一步：首先先将项目 mvn install 安装到本地仓库。
 第二步：在 Goals 中输入 mybatis-generator:generate，可以选择跳过测试
 第三部：run。

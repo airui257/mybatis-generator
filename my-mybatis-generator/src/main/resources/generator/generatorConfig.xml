@@ -42,9 +42,9 @@
     	<property name="endingDelimiter" value="`"/>
     	
     	<!-- 通用mapper接口 -->
-        <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
-            <property name="mappers" value="cn.feng.dao.util.MyMapper"/>
-        </plugin>
+        <!--<plugin type="tk.mybatis.mapper.generator.MapperPlugin">-->
+            <!--<property name="mappers" value="cn.feng.dao.util.MyMapper"/>-->
+        <!--</plugin>-->
         <!-- 缓存插件 -->
         <plugin type="org.mybatis.generator.plugins.CachePlugin">
         	<property name="cache_eviction" value="LRU"/>
